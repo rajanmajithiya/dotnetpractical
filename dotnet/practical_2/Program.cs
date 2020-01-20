@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace practical_2
 {
@@ -13,11 +14,17 @@ namespace practical_2
             string name;
             string country;
 
-            Console.WriteLine("Enter your name:");
-            name= Console.ReadLine();
+            do
+            {
+                Console.WriteLine("Enter your name:");
+                name = Console.ReadLine();
+            } while (!Regex.IsMatch(name, "^[a-zA-Z]+$"));
 
-            Console.WriteLine("Enter your Country");
-             country=Console.ReadLine();
+            do
+            {
+                Console.WriteLine("Enter your Country");
+                country = Console.ReadLine();
+            } while (!Regex.IsMatch(country, "^[a-zA-Z]+$"));
 
             Console.WriteLine("HI" + name + "your country is " + country);
         
